@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'paths' => [
+        // 数据库版本迁移目录
+        'migrations' => [
+            '@root/resources/db/migrations',
+
+        ],
+        // 数据迁移目录
+        'seeds' => [
+            '@root/resources/db/seeds',
+        ],
+    ],
+
+    // 数据迁移基类
+    'migration_base_class' => Swoft\Migrations\Migrator::class,
+
+    'environments' => [
+        // 默认迁移记录表
+        'default_migration_table' => 'phinxlog',
+
+        // 数据库配置
+        'database' => env('DB_URI', config('db.master.uri')),
+    ],
+];

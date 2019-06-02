@@ -1,0 +1,40 @@
+{
+  "name": "lldca/swoft-migration",
+  "description": "swoft migration",
+  "keywords": ["swoft migration"],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/jqhph/lldca-migration/issues",
+    "source": "https://github.com/jqhph/lldca-migration"
+  },
+  "homepage": "http://119.29.34.145",
+  "authors": [
+    {
+      "name": "Jqh",
+      "email": "841324345@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "robmorgan/phinx": "^0.10.6"
+  },
+  "replace": {
+
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.1"
+  },
+  "autoload": {
+    "files": [
+    ],
+    "psr-4": {
+      "Swoft\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.0-dev"
+    }
+  },
+  "bin": ["bin/llphinx"]
+}

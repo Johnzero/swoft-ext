@@ -22,9 +22,10 @@
   },
   "autoload": {
     "psr-4": {
-      "Swoft\\Blade\\": "blade/src/"
+      "Swoft\\Blade\\": "blade/src/",
+      "Swoft\\migration\\": "migration/src/",
+      "Swoft\\support\\": "support/src/"
     },
-    "files": [
-    ]
+    "files": []
   }
 }
