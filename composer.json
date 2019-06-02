@@ -1,0 +1,31 @@
+{
+  "name": "swoft/ext",
+  "description": "swoft-ext",
+  "keywords": ["swoft-ext"],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/Johnzero/swoft-ext/issues",
+    "source": "https://github.com/Johnzero/swoft-ext"
+  },
+  "homepage": "http://anhuinews.com",
+  "authors": [
+    {
+      "name": "Johnzero",
+      "email": "419484794@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "swoft/framework": "~2.0.0"
+  },
+  "replace": {
+  },
+  "require-dev": {},
+  "autoload": {
+    "files": [
+    ],
+    "psr-4": {
+      "Swoft\\Blade\\": "blade/src/"
+    }
+  }
+}
