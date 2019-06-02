@@ -23,8 +23,8 @@
   "autoload": {
     "psr-4": {
       "Swoft\\Blade\\": "blade/src/",
-      "Swoft\\migration\\": "migration/src/",
-      "Swoft\\support\\": "support/src/"
+      "Swoft\\Migration\\": "migration/src/",
+      "Swoft\\Support\\": "support/src/"
     },
     "files": []
   }
