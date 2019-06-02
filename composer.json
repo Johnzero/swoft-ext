@@ -20,12 +20,11 @@
   },
   "replace": {
   },
-  "require-dev": {},
   "autoload": {
-    "files": [
-    ],
     "psr-4": {
       "Swoft\\Blade\\": "blade/src/"
-    }
+    },
+    "files": [
+    ]
   }
 }
