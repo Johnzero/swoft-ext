@@ -1,6 +1,6 @@
 {
-  "name": "swoft-ext/ext",
-  "description": "swoft-ext",
+  "name": "swoft-ext/component",
+  "description": "swoft-ext-component",
   "keywords": ["swoft-ext"],
   "license": "MIT",
   "support": {
