@@ -16,16 +16,21 @@
   ],
   "require": {
     "php": ">=7.0",
-    "swoft/framework": "~2.0.0"
+    "swoft/framework": "~2.0.0",
+    "symfony/debug": "^4.1",
+    "symfony/var-dumper": "^4.1",
+    "robmorgan/phinx": "^0.10.6"
   },
   "replace": {
   },
   "autoload": {
     "psr-4": {
-      "Swoft\\Blade\\": "component/blade/src/",
-      "Swoft\\Migration\\": "component/migration/src/",
-      "Swoft\\Support\\": "component/support/src/"
+      "Swoft\\Blade\\": "blade/src/",
+      "Swoft\\Migration\\": "migration/src/",
+      "Swoft\\Support\\": "support/src/"
     },
-    "files": []
-  }
+    "files": [
+      "support/src/helpers.php"
+    ],
+  },
 }
