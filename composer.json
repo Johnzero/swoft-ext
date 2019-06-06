@@ -27,7 +27,8 @@
     "psr-4": {
       "Swoft\\Blade\\": "blade/src/",
       "Swoft\\Migration\\": "migration/src/",
-      "Swoft\\Support\\": "support/src/"
+      "Swoft\\Support\\": "support/src/",
+      "Swoft\\Service\\": "service/src/"
     },
     "files": [
       "support/src/helpers.php"

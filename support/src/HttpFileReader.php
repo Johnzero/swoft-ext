@@ -164,7 +164,7 @@ class HttpFileReader
         }
 
         foreach (static::$assetsPaths as &$root) {
-            $fullPath = "/www/wwwroot/bakswoft4".$root.$path;
+            $fullPath = $path;
             if (is_file($fullPath)) {
                 return $fullPath;
             }

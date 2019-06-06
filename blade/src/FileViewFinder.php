@@ -39,7 +39,6 @@ class FileViewFinder implements ViewFinderInterface
      * @var array
      */
     protected $hints = [
-        'admin'=>array("/www/wwwroot/bakswoft4/resource/views/swoft-admin")
     ];
 
     /**
@@ -86,6 +85,7 @@ class FileViewFinder implements ViewFinderInterface
      */
     protected function findNamespacedView($name)
     {
+
         list($namespace, $view) = $this->parseNamespaceSegments($name);
 
         return $this->findInPaths($view, $this->hints[$namespace]);

@@ -34,9 +34,7 @@ class ViewServiceProvider
 
         blade_factory()->addNamespace('admin', alias(config('admin.views-path', __DIR__.'/../../resources/views')));
         // 注册静态资源别名
-        Assets::setAlias([
-            'admin' => alias(config('admin.assets-path', '/assets/swoft-admin'))
-        ]);
+
 
     }
 

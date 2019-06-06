@@ -3,11 +3,9 @@
 namespace Swoft\Blade;
 
 use Swoft\Bean\BeanFactory;
-
 use Swoft\Helper\ComposerJSON;
 use Swoft\SwoftComponent;
 use Swoft\Blade\Compilers\BladeCompiler;
-
 use Swoft\Blade\Engines\CompilerEngine;
 use Swoft\Blade\Engines\EngineResolver;
 use Swoft\Blade\Engines\FileEngine;
@@ -94,15 +92,7 @@ class AutoLoader extends SwoftComponent
 //                'engines' => '${\bean("view.engine.resolver")}',
                 'engines' => \bean('view_engine_resolver'),
                 'finder' => \bean('view_finder'),
-                'path'     => '@base/resources/views',
-                'compiled' => '@base/runtime/views',
-                'namespaces' => [],
-                // 静态资源读取目录
-                'assets' => [],
-                // 开启加载静态资源
-                'read-assets' => true,
-            ],
-
+            ]
         ];
     }
 

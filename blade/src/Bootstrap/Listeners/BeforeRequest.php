@@ -51,44 +51,23 @@ class BeforeRequest implements EventHandlerInterface
         static::$registed = true;
 
         // 注册视图命名空间
-//        var_dump(config('blade-view'));
-
-        if ($namespaces = config('blade-view.namespaces')) {
+        if ($namespaces = config('dashboard.namespaces')) {
             foreach ((array)$namespaces as $namespace => &$path) {
                 $factory->addNamespace($namespace, alias($path));
             }
         }
 
-//        $router = Router::create();
-//        $r1 = Router::create('GET', '/path1', 'handler0');
-//        $r1->setName('r1');
-//        $router->addRoute($r1);
-//
-        // 判断是否允许读取静态资源
-        $readAssets = 1;
-        $factory->addNamespace('admin', alias(config('admin.views-path', __DIR__.'/../../resources/views')));
-//        Assets::setAlias([
-//            'admin' => alias(config('admin.assets-path', '/public/assets/swoft-admin'))
-//        ]);
-        
+        Assets::setAlias([
+            'dashboard' => alias(config('dashboard.assets-path')),
+            'admin' => alias(config('dashboard.assets-path', '/assets/swoft-admin'))
+        ]);
+
         // 注册静态资源目录
-        if ($paths = "/public") {
+        if ( $paths = config('dashboard.assets-path') ) {
             foreach ((array)$paths as &$path) {
                 HttpFileReader::addAssetsPath($path);
             }
         }
-        /* @var ServerDispatcher $serverDispatcher */
-//        $serverDispatcher = \bean('serverDispatcher');
-//        foreach ($this->middlewares as $name => $middleware) {
-//            if (!$readAssets && $middleware === AssetsMiddleware::class) {
-//                continue;
-//            }
-//            $serverDispatcher->addMiddleware(
-//                class_basename($middleware),
-//                is_string($name) && !empty($name) ? $name : null
-//            );
-//        }
-
 
     }
 }
