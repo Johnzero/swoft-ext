@@ -13,6 +13,31 @@ use Swoft\Bean\BeanFactory;
 use Swoft\Support\MessageBag;
 use Psr\Http\Message\ResponseInterface;
 use Swoft\Support\SessionHelper;
+use Swoft\Stdlib\Contract\Arrayable;
+
+use Swoft\Bean\Container;
+use Swoft\Http\Message\Request;
+use Swoft\Http\Server\Contract\MiddlewareInterface;
+use Swoft\Http\Server\Exception\HttpServerException;
+use Swoft\Http\Server\RequestHandler;
+use Swoft\Http\Server\Router\Route;
+use Swoft\Http\Server\Router\Router;
+
+if (!function_exists('class_action')) {
+    function class_action()
+    {
+        $request = \context()->getRequest();
+        $uri = $request->getUri();
+        $method  = $request->getMethod();
+        $uriPath = $request->getUriPath();
+        $router        = Container::$instance->getSingleton('httpRouter');
+        $routerHandler = $router->match($uriPath, $method);
+        [$status, , $route] = $routerHandler;
+        $handlerId = $route->getHandler();
+        [$className, $action] = explode('@', $handlerId);
+        return [$className, $action];
+    }
+}
 
 if (!function_exists('admin_path')) {
     /**
@@ -384,6 +409,19 @@ if (!function_exists('arr_merge')) {
         }
 
         return $content;
+    }
+}
+
+if (!function_exists('object_array')) {
+    function object_array($array) {
+        if(is_object($array)) {
+            $array = (array)$array;
+        } if(is_array($array)) {
+            foreach($array as $key=>$value) {
+                $array[$key] = object_array($value);
+            }
+        }
+        return $array;
     }
 }
 
@@ -1137,7 +1175,7 @@ if (!function_exists('html_response')) {
         } elseif ($content instanceof \Swoft\Support\Contracts\Renderable) {
             $content = $content->render();
         }
-        $response = $response ?: Swoft\Core\context()->getResponse();
+        $response = $response ?: \context()->getResponse();
 
         return $response->withContent($content)
             ->withoutHeader('Content-Type')

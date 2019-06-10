@@ -2,6 +2,7 @@
 
 namespace Swoft\Migrations;
 
+use Swoft;
 use Swoft\App;
 use Swoft\Exception\InvalidArgumentException;
 use Symfony\Component\HttpFoundation\File\Exception\CannotWriteFileException;
@@ -81,13 +82,13 @@ class Config
             if (isset(static::$attributes[$path]['paths']['migrations'])) {
                 static::$attributes[$path]['paths']['migrations'] = (array)static::$attributes[$path]['paths']['migrations'];
                 foreach (static::$attributes[$path]['paths']['migrations'] as &$v) {
-                    $v = rtrim(App::getAlias($v), '/');
+                    $v = rtrim(\Swoft::getAlias($v), '/');
                 }
             }
             if (isset(static::$attributes[$path]['paths']['seeds'])) {
                 static::$attributes[$path]['paths']['seeds'] = (array)static::$attributes[$path]['paths']['seeds'];
                 foreach (static::$attributes[$path]['paths']['seeds'] as &$v) {
-                    $v = rtrim(App::getAlias($v), '/');
+                    $v = rtrim(\Swoft::etAlias($v), '/');
                 }
             }
 
@@ -149,8 +150,8 @@ class Config
      */
     protected static function createPathsIfNotExists(array $attr)
     {
-        $migrationsPaths = array_get($attr, 'paths.migrations', [alias('@root/resources/db/migrations')]);
-        $seedsPaths = array_get($attr, 'paths.seeds', [alias('@root/resources/db/seeds')]);
+        $migrationsPaths = array_get($attr, 'paths.migrations', [alias('@root/resource/db/migrations')]);
+        $seedsPaths = array_get($attr, 'paths.seeds', [alias('@root/resource/db/seeds')]);
 
         foreach ($migrationsPaths as &$path) {
             if (!is_dir($path)) {

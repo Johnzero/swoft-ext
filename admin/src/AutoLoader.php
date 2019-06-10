@@ -52,7 +52,18 @@ class AutoLoader extends SwoftComponent
     public function beans(): array
     {
         return [
-
+            'DebugMiddleware' => [
+                'class'     => \Swoft\Admin\Bootstrap\DebugMiddleware::class
+            ],
+            'PjaxMiddleware' => [
+                'class'     => \Swoft\Admin\Bootstrap\PjaxMiddleware::class
+            ],
+            'ExceptionHandleMiddleware' => [
+                'class'     => \Swoft\Admin\Bootstrap\ExceptionHandleMiddleware::class
+            ],
+            'VerifyCsrfToken' => [
+                'class'     => \Swoft\Admin\Bootstrap\VerifyCsrfToken::class
+            ],
         ];
     }
 }

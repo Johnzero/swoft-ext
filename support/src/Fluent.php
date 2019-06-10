@@ -6,6 +6,7 @@ use ArrayAccess;
 use JsonSerializable;
 use Swoft\Support\Contracts\Jsonable;
 use Swoft\Stdlib\Helper\ArrayHelper;
+use Swoft\Stdlib\Contract\Arrayable;
 
 class Fluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
 {

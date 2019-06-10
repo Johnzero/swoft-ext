@@ -59,7 +59,7 @@ class BeforeRequest implements EventHandlerInterface
 
         Assets::setAlias([
             'dashboard' => alias(config('dashboard.assets-path')),
-            'admin' => alias(config('dashboard.assets-path', '/assets/swoft-admin'))
+            'admin' => alias(config('dashboard.assets-path'))
         ]);
 
         // 注册静态资源目录

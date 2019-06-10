@@ -13,6 +13,8 @@ use Swoft\Support\Traits\Macroable;
 use Swoft\Support\Contracts\Jsonable;
 use Swoft\Stdlib\Helper\ArrayHelper;
 
+use Swoft\Stdlib\Contract\Arrayable;
+
 class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate, Jsonable, JsonSerializable
 {
     use Macroable;
