@@ -19,21 +19,14 @@
     "swoft/framework": "~2.0.0",
     "symfony/debug": "^4.1",
     "symfony/var-dumper": "^4.1",
-    "robmorgan/phinx": "^0.10.6"
   },
   "replace": {
   },
   "autoload": {
     "psr-4": {
-      "Swoft\\Blade\\": "blade/src/",
-      "Swoft\\Migration\\": "migration/src/",
-      "Swoft\\Support\\": "support/src/",
-      "Swoft\\Admin\\": "admin/src/",
       "Swoft\\Service\\": "service/src/"
     },
     "files": [
-      "admin/src/helpers.php",
-      "support/src/helpers.php"
     ]
   }
 }

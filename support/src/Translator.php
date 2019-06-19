@@ -18,7 +18,7 @@ class Translator
      * @var string
      * @Value(name="${config.translator.languageDir}", env="${TRANSLATOR_LANG_DIR}")
      */
-    public $languageDir = '@base/resources/languages/';
+    public $languageDir = '@base/resource/languages/';
 
     /**
      * Translation messages

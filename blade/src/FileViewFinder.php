@@ -127,6 +127,7 @@ class FileViewFinder implements ViewFinderInterface
     {
         foreach ((array) $paths as $path) {
             foreach ($this->getPossibleViewFiles($name) as $file) {
+                $viewPath = $path.'/'.$file;
                 if ($this->files->exists($viewPath = $path.'/'.$file)) {
                     return $viewPath;
                 }
@@ -271,7 +272,7 @@ class FileViewFinder implements ViewFinderInterface
     public function getPaths()
     {
         if (!$this->paths) {
-            $this->paths[] = alias(config('blade-view.path') ?: '@base/resources/views');
+            $this->paths[] = alias(config('dashboard.path') ?: '@base/resource/views');
         }
         return $this->paths;
     }

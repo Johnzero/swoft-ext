@@ -12,6 +12,7 @@ use Swoft\Blade\Engines\EngineResolver;
 use Swoft\Bean\Container;
 use Swoft\Event\EventManager;
 use Swoft\Blade\Contracts\View as ViewInterface;
+use Swoft\Stdlib\Contract\Arrayable;
 
 class Factory
 {
@@ -192,7 +193,6 @@ class Factory
     public function renderEach($view, $data, $iterator, $empty = 'raw|')
     {
         $result = '';
-
         // If is actually data in the array, we will loop through the data and append
         // an instance of the partial view to the final result HTML passing in the
         // iterated value of this data array, allowing the views to access them.

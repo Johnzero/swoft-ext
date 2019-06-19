@@ -141,7 +141,7 @@ class AutoLoader extends SwoftComponent
             'blade_view' => [
                 'class' => Factory::class,
                 'name'  => 'blade_view',
-                'path' => '@base/resources/views', // 默认模板路径
+                'path' => '@base/resource/views', // 默认模板路径
                 'compiled' => '@base/runtime/views', // 编译模板缓存路径
                 'namespaces' => [ // 视图命名空间
                 ],

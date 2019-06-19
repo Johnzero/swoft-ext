@@ -28,7 +28,7 @@ use Swoft\Server\Swoole\RequestInterface;
 //    public function onWorkerStart(Server $server, int $workerId)
 //    {
 //        // 注册视图命名空间
-//        blade_factory()->addNamespace('admin', alias(config('admin.views-path', __DIR__.'/../../resources/views')));
+//        blade_factory()->addNamespace('admin', alias(config('admin.views-path', __DIR__.'/../../resource/views')));
 //
 //        // 注册静态资源别名
 //        Assets::setAlias([

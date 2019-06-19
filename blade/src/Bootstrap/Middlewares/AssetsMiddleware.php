@@ -6,7 +6,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Swoft\Bean\Annotation\Mapping\Bean;
-// use Swoft\Http\Message\Middleware\MiddlewareInterface;
+// use Swoft\Http\Server\Contract\MiddlewareInterface;
 use Swoft\Support\HttpFileReader;
 
 /**

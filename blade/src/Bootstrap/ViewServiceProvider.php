@@ -32,7 +32,7 @@ class ViewServiceProvider
     {
         $this->container = BeanFactory::getContainer();
 
-        blade_factory()->addNamespace('admin', alias(config('admin.views-path', __DIR__.'/../../resources/views')));
+        blade_factory()->addNamespace('admin', alias(config('admin.views-path', __DIR__.'/../../resource/views')));
         // 注册静态资源别名
 
 
