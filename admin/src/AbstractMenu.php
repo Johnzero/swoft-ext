@@ -7,9 +7,6 @@ namespace Swoft\Admin;
  */
 abstract class AbstractMenu
 {
-
-
-
     /**
      * 主键名称
      *

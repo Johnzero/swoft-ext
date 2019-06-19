@@ -19,6 +19,7 @@
     "swoft/framework": "~2.0.0",
     "symfony/debug": "^4.1",
     "symfony/var-dumper": "^4.1",
+    "fzaninotto/faker":"^1.8.0"
   },
   "replace": {
   },
